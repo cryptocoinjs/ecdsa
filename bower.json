@@ -1,0 +1,30 @@
+{
+  "name": "cryptocoin-ecdsa",
+  "version": "0.0.1",
+  "description": "Eliptical Curve Cryptography Digital Signing",
+  "keywords": [
+    "cryptography",
+    "crypto",
+    "bitcoin",
+    "litecoin",
+    "eliptical",
+    "curve",
+    "digital",
+    "sign",
+    "signing"
+  ],
+  "ignore": [
+    "node_modules",
+    ".DS_Store",
+    "component.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "cryptocoin-bigint": "0.0.x",
+    "cryptocoin-ecc": "0.0.x",
+    "cryptocoin-ecc-named": "0.0.x",
+    "secure-random": "0.0.x"
+  },
+  "repo": "https://github.com/cryptocoinjs/ecdsa",
+  "main": "./lib/ecdsa.js"
+}
