@@ -32,6 +32,28 @@ Install
 ```
 
 
+Example
+-------
+
+```js
+var ecdsa = require('../lib/ecdsa')
+  , sha256 = require('sha256')
+  , secureRandom = require('secure-random')
+  , ecparams = require('ecurve-names')('secp256k1')
+  , BigInteger = require('cryptocoin-bigint')
+
+var randArr = secureRandom(32, {array: true})
+var privKey = BigInteger.fromByteArrayUnsigned(randArr)
+//var privKey = ecdsa.getBigRandom(ecparams.getN())
+var pubPoint = ecparams.getG().multiply(privKey)
+var pubKey = pubPoint.getEncoded(false) //true => compressed, fails though, must investigate
+var msg = "hello world!"
+var shaMsg = sha256(msg)
+var signature = ecdsa.sign(shaMsg, privKey)
+var isValid = ecdsa.verify(shaMsg, signature, pubKey)
+console.log(isValid) //true
+```
+
 
 Credits
 -------
