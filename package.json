@@ -1,6 +1,6 @@
 {
   "name": "ecdsa",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Elliptical Curve Cryptography Digital Signing",
   "keywords": [
     "cryptography",
@@ -15,7 +15,9 @@
   ],
   "devDependencies": {
     "mocha": "1.*",
-    "terst": "0.0.1"
+    "terst": "0.0.1",
+    "sha256": "~0.1.0",
+    "secure-random": "0.0.1"
   },
   "repository": {
     "url": "https://github.com/cryptocoinjs/ecdsa",
@@ -23,9 +25,9 @@
   },
   "main": "./lib/ecdsa.js",
   "dependencies": {
-    "cryptocoin-bigint": "0.1.x",
-    "ecurve": "0.1.x",
-    "ecurve-names": "0.1.x",
+    "cryptocoin-bigint": "~0.1.0",
+    "ecurve": "~0.1.0",
+    "ecurve-names": "~0.1.1",
     "secure-random": "0.0.x"
   }
 }
