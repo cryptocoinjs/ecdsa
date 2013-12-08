@@ -19,9 +19,9 @@
   ],
   "main": "./lib/ecdsa.js",
   "dependencies": {
-    "cryptocoinjs/bigint": "0.1.x",
-    "cryptocoinjs/ecurve": "0.1.x",
-    "cryptocoinjs/ecurve-names": "0.1.x",
-    "secure-random": "0.0.x"
+    "cryptocoinjs/bigi": "0.2.x",
+    "cryptocoinjs/ecurve": "0.2.x",
+    "cryptocoinjs/ecurve-names": "0.2.x",
+    "secure-random": "0.1.x"
   }
 }

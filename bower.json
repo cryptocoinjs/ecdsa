@@ -20,10 +20,10 @@
     "package.json"
   ],
   "dependencies": {
-    "cryptocoin-bigint": "0.1.x",
-    "ecurve": "0.1.x",
-    "ecurve-names": "0.1.x",
-    "secure-random": "0.0.x"
+    "bigi": "0.2.x",
+    "ecurve": "0.2.x",
+    "ecurve-names": "0.2.x",
+    "secure-random": "0.1.x"
   },
   "repo": "https://github.com/cryptocoinjs/ecdsa",
   "main": "./lib/ecdsa.js"

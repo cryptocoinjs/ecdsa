@@ -25,9 +25,9 @@
   },
   "main": "./lib/ecdsa.js",
   "dependencies": {
-    "cryptocoin-bigint": "~0.1.0",
-    "ecurve": "~0.1.0",
-    "ecurve-names": "~0.1.1",
-    "secure-random": "0.0.x"
+    "bigi": "~0.2.0",
+    "ecurve": "~0.2.0",
+    "ecurve-names": "~0.2.1",
+    "secure-random": "0.1.x"
   }
 }
