@@ -4,7 +4,7 @@ var ecdsa = require('../lib/ecdsa')
   , sha256 = require('sha256')
   , secureRandom = require('secure-random')
   , ecparams = require('ecurve-names')('secp256k1')
-  , BigInteger = require('cryptocoin-bigint')
+  , BigInteger = require('bigi')
 
 describe('+ verify()', function() {
   describe('> when public key is NOT compressed', function() {
