@@ -1,3 +1,7 @@
+0.3.0 / 2013-12-08
+------------------
+* upgraded deps (for `bigi`)
+
 0.2.0 / 2013-12-07
 ------------------
 * moved `recoverPubKey()` to package `eckey`
