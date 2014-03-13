@@ -1,7 +1,7 @@
 ecdsa
 ======
 
-JavaScript component to Elliptical Curve Cryptography signing and verify.
+JavaScript component for Elliptical Curve Cryptography signing and verify.
 
 
 See this article for more details: [bitcoin address](http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript).
@@ -11,25 +11,7 @@ See this article for more details: [bitcoin address](http://procbits.com/2013/08
 Install
 -------
 
-### Node.js/Browserify
-
     npm install --save ecdsa
-
-### Component
-
-    component install cryptocoinjs/ecdsa
-
-
-### Bower
-
-    bower install ecdsa
-
-
-### Script
-
-```html
-<script src="/path/to/ecdsa.js"></script>
-```
 
 
 Example
@@ -37,10 +19,10 @@ Example
 
 ```js
 var ecdsa = require('../lib/ecdsa')
-  , sha256 = require('sha256')
-  , secureRandom = require('secure-random')
-  , ecparams = require('ecurve-names')('secp256k1')
-  , BigInteger = require('cryptocoin-bigint')
+var sha256 = require('sha256')
+var secureRandom = require('secure-random')
+var ecparams = require('ecurve-names')('secp256k1')
+var BigInteger = require('bigi')
 
 var randArr = secureRandom(32, {array: true})
 var privKey = BigInteger.fromByteArrayUnsigned(randArr)

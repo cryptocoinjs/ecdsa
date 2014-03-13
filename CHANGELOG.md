@@ -1,3 +1,8 @@
+0.4.0 / 2014-03-13
+------------------
+* removed bower / component stuff. Still works with browser, just use `browserify`
+
+
 0.3.0 / 2013-12-08
 ------------------
 * upgraded deps (for `bigi`)
