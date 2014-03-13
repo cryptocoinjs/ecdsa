@@ -1,10 +1,10 @@
 require('terst')
 
-var ecdsa = require('../lib/ecdsa')
-  , sha256 = require('sha256')
-  , secureRandom = require('secure-random')
-  , ecparams = require('ecurve-names')('secp256k1')
-  , BigInteger = require('bigi')
+var ecdsa = require('../lib/ecdsa');
+var sha256 = require('sha256');
+var secureRandom = require('secure-random');
+var ecparams = require('ecurve-names')('secp256k1');
+var BigInteger = require('bigi');
 
 describe('+ verify()', function() {
   describe('> when public key is NOT compressed', function() {
