@@ -1,6 +1,6 @@
 0.4.0 / 2014-03-13
 ------------------
-* removed bower / component stuff. Still works with browser, just use `browserify`
+* removed bower / component stuff. Still works with browser, just use `browserify`. Closes #3
 * moved from 4 spaces to 2 spaces (Node style)
 
 0.3.0 / 2013-12-08
