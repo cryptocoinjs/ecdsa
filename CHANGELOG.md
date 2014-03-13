@@ -3,6 +3,7 @@
 * removed bower / component stuff. Still works with browser, just use `browserify`. Closes #3
 * moved from 4 spaces to 2 spaces (Node style)
 * made class based so that multiple instantiations can be made with different curves, i.e. not just tied to `secp256k1`
+* made class level methods so that existing code should work with very little modification
 
 0.3.0 / 2013-12-08
 ------------------
