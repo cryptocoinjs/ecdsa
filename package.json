@@ -27,7 +27,6 @@
   "dependencies": {
     "bigi": "~0.2.0",
     "ecurve": "~0.2.0",
-    "ecurve-names": "~0.2.x",
     "secure-random": "0.1.x"
   }
 }
