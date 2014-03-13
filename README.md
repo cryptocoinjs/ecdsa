@@ -18,10 +18,10 @@ Example
 -------
 
 ```js
-var ecdsa = require('../lib/ecdsa')
+var ecparams = require('ecurve-names')('secp256k1')
+var ecdsa = require('ecdsa')
 var sha256 = require('sha256')
 var secureRandom = require('secure-random')
-var ecparams = require('ecurve-names')('secp256k1')
 var BigInteger = require('bigi')
 
 var randArr = secureRandom(32, {array: true})
