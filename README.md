@@ -26,7 +26,13 @@ var BigInteger = require('bigi')
 
 var randArr = secureRandom(32, {array: true})
 var privKey = BigInteger.fromByteArrayUnsigned(randArr)
-//var privKey = ecdsa.getBigRandom(ecparams.getN())
+
+//must set curve
+var ecdsa = new ECDSA(ecparams);
+
+//or
+//ECDSA.ecparams = ecparams;
+
 var pubPoint = ecparams.getG().multiply(privKey)
 var pubKey = pubPoint.getEncoded(false) //true => compressed, fails though, must investigate
 var msg = "hello world!"

@@ -37,12 +37,14 @@ describe('- verify()', function() {
     it('should verify the signature', function() {
       var randArr = secureRandom(32, {array: true})
       var privKey = BigInteger.fromByteArrayUnsigned(randArr)
+      var ecdsa = new ECDSA(ecparams);
       //var privKey = ecdsa.getBigRandom(ecparams.getN())
       var pubPoint = ecparams.getG().multiply(privKey)
       var pubKey = pubPoint.getEncoded(true) //true => compressed
       var msg = "hello world!"
       var shaMsg = sha256(msg)
       var signature = ecdsa.sign(shaMsg, privKey)
+      console.log(signature)
       var isValid = ecdsa.verify(shaMsg, signature, pubKey)
       T (isValid)
     })

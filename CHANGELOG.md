@@ -5,6 +5,7 @@
 * made class based so that multiple instantiations can be made with different curves, i.e. not just tied to `secp256k1`. Closes #2
 * made class level methods so that existing code should work with very little modification
 * removed dependency upon `ecurve-names`
+* update deps: `secure-random` and `ecurve`. (will eventually removed secure-random)
 
 0.3.0 / 2013-12-08
 ------------------
