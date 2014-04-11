@@ -19,7 +19,7 @@ Example
 
 ```js
 var ecparams = require('ecurve-names')('secp256k1')
-var ecdsa = require('ecdsa')
+var ECDSA = require('ecdsa')
 var sha256 = require('sha256')
 var secureRandom = require('secure-random')
 var BigInteger = require('bigi')
