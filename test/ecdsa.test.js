@@ -33,7 +33,7 @@ describe('- verify()', function() {
     })
   })
 
-  describe.skip('> when public key is compressed', function() {
+  describe('> when public key is compressed', function() {
     it('should verify the signature', function() {
       var randArr = secureRandom(32, {array: true})
       var privKey = BigInteger.fromByteArrayUnsigned(randArr)
@@ -69,7 +69,7 @@ describe('+ verify()', function() {
     })
   })
 
-  describe.skip('> when public key is compressed', function() {
+  describe('> when public key is compressed', function() {
     it('should verify the signature', function() {
       var randArr = secureRandom(32, {array: true})
       var privKey = BigInteger.fromByteArrayUnsigned(randArr)
