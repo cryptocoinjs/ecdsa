@@ -24,7 +24,7 @@ describe('- verify()', function() {
       var ecdsa = new ECDSA(ecparams);
       //var privKey = ecdsa.getBigRandom(ecparams.getN())
       var pubPoint = ecparams.getG().multiply(privKey)
-      var pubKey = pubPoint.getEncoded(false) //true => compressed, test fails then, must investigate
+      var pubKey = pubPoint.getEncoded(false) //true => compressed
       var msg = "hello world!"
       var shaMsg = sha256(msg)
       var signature = ecdsa.sign(shaMsg, privKey)
@@ -60,7 +60,7 @@ describe('+ verify()', function() {
       ECDSA.ecparams = ecparams;
       //var privKey = ecdsa.getBigRandom(ecparams.getN())
       var pubPoint = ecparams.getG().multiply(privKey)
-      var pubKey = pubPoint.getEncoded(false) //true => compressed, test fails then, must investigate
+      var pubKey = pubPoint.getEncoded(false) //true => compressed
       var msg = "hello world!"
       var shaMsg = sha256(msg)
       var signature = ECDSA.sign(shaMsg, privKey)
