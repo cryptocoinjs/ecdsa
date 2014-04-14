@@ -15,7 +15,7 @@
   ],
   "devDependencies": {
     "mocha": "1.*",
-    "terst": "0.0.1",
+    "terst": "~0.1.0",
     "sha256": "~0.1.0",
     "ecurve-names": "~0.3.0"
   },
