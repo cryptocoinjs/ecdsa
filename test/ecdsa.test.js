@@ -44,7 +44,6 @@ describe('- verify()', function() {
       var msg = "hello world!"
       var shaMsg = sha256(msg)
       var signature = ecdsa.sign(shaMsg, privKey)
-      console.log(signature)
       var isValid = ecdsa.verify(shaMsg, signature, pubKey)
       T (isValid)
     })
