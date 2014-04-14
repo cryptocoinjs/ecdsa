@@ -34,7 +34,7 @@ var ecdsa = new ECDSA(ecparams);
 //ECDSA.ecparams = ecparams;
 
 var pubPoint = ecparams.getG().multiply(privKey)
-var pubKey = pubPoint.getEncoded(false) //true => compressed, fails though, must investigate
+var pubKey = pubPoint.getEncoded(false) //true => compressed
 var msg = "hello world!"
 var shaMsg = sha256(msg)
 var signature = ecdsa.sign(shaMsg, privKey)
