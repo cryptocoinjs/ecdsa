@@ -1,3 +1,9 @@
+0.4.1 / 2014-04-14
+------------------
+* bugfix: `parseSigCompact()` referencing invalid `ecparams` #6
+* bugfix: `verify()` works with compressed keys #9
+* add browser tests
+
 0.4.0 / 2014-03-13
 ------------------
 * removed bower / component stuff. Still works with browser, just use `browserify`. Closes #3
