@@ -25,7 +25,8 @@ var ecdsa = require('ecdsa')('secp256r1')
 * added `serializeSigCompact()` from BitcoinJS
 * changed method signature of `sign(hash, privateKeyBigInteger)` to sign(hash, privateKeyBuffer)`
 * `sign()` method now uses low `s` value: See: https://github.com/cryptocoinjs/ecdsa/issues/10
-* renamed `calcPubkeyRecoveryParam()` to `calcPubKeyRecoveryParam()`, changed signature 
+* renamed `calcPubkeyRecoveryParam()` to `calcPubKeyRecoveryParam()`, changed signature
+* added Testling support 
 
 
 0.4.1 / 2014-04-14
