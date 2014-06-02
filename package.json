@@ -17,7 +17,10 @@
     "mocha": "1.*",
     "terst": "~0.1.0",
     "sha256": "~0.1.0",
-    "ecurve-names": "~0.3.0"
+    "ecurve-names": "~0.3.0",
+    "coveralls": "^2.10.0",
+    "mocha-lcov-reporter": "0.0.1",
+    "istanbul": "^0.2.10"
   },
   "repository": {
     "url": "https://github.com/cryptocoinjs/ecdsa",
