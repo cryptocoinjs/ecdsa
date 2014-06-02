@@ -70,17 +70,21 @@ describe('ecdsa', function() {
     })
   })
 
-  describe.skip('recoverPubKey', function() {
+  describe('recoverPubKey', function() {
     it('succesfully recovers a public key', function() {
       var D = BigInteger.ONE
       var signature = new Buffer('INcvXVVEFyIfHLbDX+xoxlKFn3Wzj9g0UbhObXdMq+YMKC252o5RHFr0/cKdQe1WsBLUBi4morhgZ77obDJVuV0=', 'base64')
 
-      var Q = ecparams.getG().multiply(D)
-      var hash = message.magicHash('1111', networks.bitcoin)
+      var Q = ecparams.g.multiply(D)
+
+      //CryptoCoinJS doesn't have message yet
+      //var hash = message.magicHash('1111', networks.bitcoin)
+      var hash = new Buffer('feef89995d7575f12d65ccc9d28ccaf7ab224c2e59dad4cc7f6a2b0708d24696', 'hex')
+
       var e = BigInteger.fromBuffer(hash)
       var parsed = ecdsa.parseSigCompact(signature)
 
-      var Qprime = ecdsa.recoverPubKey(ecparams, e, parsed.signature, parsed.i)
+      var Qprime = ecdsa.recoverPubKey(e, parsed.signature, parsed.i)
       T (Q.equals(Qprime))
     })
   })
