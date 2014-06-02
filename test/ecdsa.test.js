@@ -119,12 +119,12 @@ describe('ecdsa', function() {
     })
   })
 
-  describe.skip('+ sign', function() {
+  describe('sign', function() {
     it('matches the test vectors', function() {
       fixtures.valid.forEach(function(f) {
-        var D = BigInteger.fromHex(f.D)
+        var privateKey = new Buffer(f.D, 'hex')
         var hash = crypto.createHash('sha256').update(new Buffer(f.message, 'utf8')).digest()
-        var signature = ecdsa.sign(hash, D)
+        var signature = ecdsa.sign(hash, privateKey)
 
         EQ (signature.r.toString(), f.signature.r)
         EQ (signature.s.toString(), f.signature.s)
@@ -141,17 +141,17 @@ describe('ecdsa', function() {
     })
   })
 
-  describe('- verify()', function() {
+  describe('verify()', function() {
     describe('> when public key is NOT compressed', function() {
       it('should verify the signature', function() {
         var randArr = secureRandom(32, {array: true});
         var privKey = BigInteger.fromByteArrayUnsigned(randArr);
-        //var privKey = ecdsa.getBigRandom(ecparams.getN())
+        var privateKey = privKey.toBuffer()
         var pubPoint = ecparams.g.multiply(privKey)
         var pubKey = pubPoint.getEncoded(false) //true => compressed
         var msg = "hello world!"
         var shaMsg = crypto.createHash('sha256').update(new Buffer(msg, 'utf8')).digest()
-        var signature = ecdsa.sign(shaMsg, privKey)
+        var signature = ecdsa.sign(shaMsg, privateKey)
         var isValid = ecdsa.verify(shaMsg, signature, pubKey)
         T (isValid)
       })
@@ -161,12 +161,27 @@ describe('ecdsa', function() {
       it('should verify the signature', function() {
         var randArr = secureRandom(32, {array: true})
         var privKey = BigInteger.fromByteArrayUnsigned(randArr)
-        //var privKey = ecdsa.getBigRandom(ecparams.getN())
+        var privateKey = privKey.toBuffer()
         var pubPoint = ecparams.g.multiply(privKey)
         var pubKey = pubPoint.getEncoded(true) //true => compressed
         var msg = "hello world!"
         var shaMsg = crypto.createHash('sha256').update(new Buffer(msg, 'utf8')).digest()
-        var signature = ecdsa.sign(shaMsg, privKey)
+        var signature = ecdsa.sign(shaMsg, privateKey)
+        var isValid = ecdsa.verify(shaMsg, signature, pubKey)
+        T (isValid)
+      })
+    })
+
+    describe('> when private key is a BigInteger for legacy compatiblity', function() {
+      it('should verify the signature', function() {
+        var randArr = secureRandom(32, {array: true})
+        var privKeyBigInt = BigInteger.fromByteArrayUnsigned(randArr)
+
+        var pubPoint = ecparams.g.multiply(privKeyBigInt)
+        var pubKey = pubPoint.getEncoded(true) //true => compressed
+        var msg = "hello world!"
+        var shaMsg = crypto.createHash('sha256').update(new Buffer(msg, 'utf8')).digest()
+        var signature = ecdsa.sign(shaMsg, privKeyBigInt)
         var isValid = ecdsa.verify(shaMsg, signature, pubKey)
         T (isValid)
       })
