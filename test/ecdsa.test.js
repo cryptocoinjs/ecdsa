@@ -12,11 +12,11 @@ var fixtures = require('./fixtures/ecdsa')
 require('terst')
 
 describe('ecdsa', function() {
-  describe.skip('deterministicGenerateK', function() {
+  describe('deterministicGenerateK', function() {
     it('matches the test vectors', function() {
       fixtures.valid.forEach(function(f) {
         var D = BigInteger.fromHex(f.D)
-        var h1 = crypto.sha256(f.message)
+        var h1 = crypto.createHash('sha256').update(new Buffer(f.message, 'utf8')).digest()
 
         var k = ecdsa.deterministicGenerateK(h1, D)
         EQ (k.toHex(), f.k)

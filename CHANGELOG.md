@@ -20,6 +20,7 @@ if you want another curve:
 var ecdsa = require('ecdsa')('secp256r1')
 ```
 
+* added `deterministicGenerateK()`, RFC 6979. See: https://github.com/cryptocoinjs/ecdsa/issues/4.
 
 
 0.4.1 / 2014-04-14
