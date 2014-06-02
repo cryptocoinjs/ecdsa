@@ -2,6 +2,8 @@
 ------------------
 * added Travis CI support
 * added Coveralls support
+* upgraded `~ecurve@0.3.2` to `^ecurve@0.6.0`
+* removed `ecurve-names` from dev deps
 
 0.4.1 / 2014-04-14
 ------------------
