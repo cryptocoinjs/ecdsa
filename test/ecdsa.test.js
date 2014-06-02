@@ -131,7 +131,7 @@ describe('ecdsa', function() {
       })
     })
 
-    it.skip('should sign with low S value', function() {
+    it('should sign with low S value', function() {
       var hash = crypto.createHash('sha256').update(new Buffer('Vires in numeris', 'utf8')).digest()
       var sig = ecdsa.sign(hash, BigInteger.ONE)
 
