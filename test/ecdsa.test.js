@@ -6,18 +6,12 @@ var secureRandom = require('secure-random');
 var ecurve = require('ecurve')
 var ecparams = ecurve.getECParams('secp256k1')
 
-var ECDSA = require('../')
+var ecdsa = require('../')
 var fixtures = require('./fixtures/ecdsa')
 
 require('terst')
 
 describe('ecdsa', function() {
-  var ecdsa = null
-
-  beforeEach(function() {
-    ecdsa = new ECDSA('secp256k1')
-  })
-
   describe.skip('deterministicGenerateK', function() {
     it('matches the test vectors', function() {
       fixtures.valid.forEach(function(f) {
@@ -34,7 +28,7 @@ describe('ecdsa', function() {
     it('decodes the correct signature', function() {
       fixtures.valid.forEach(function(f) {
         var buffer = new Buffer(f.DER, 'hex')
-        var signature = ECDSA.parseSig(buffer)
+        var signature = ecdsa.parseSig(buffer)
 
         EQ (signature.r.toString(), f.signature.r)
         EQ (signature.s.toString(), f.signature.s)
@@ -46,7 +40,7 @@ describe('ecdsa', function() {
         var buffer = new Buffer(f.hex, 'hex')
 
         THROWS(function() {
-          ECDSA.parseSig(buffer)
+          ecdsa.parseSig(buffer)
         }, new RegExp(f.exception))
       })
     })
@@ -99,7 +93,7 @@ describe('ecdsa', function() {
           s: new BigInteger(f.signature.s)
         }
 
-        var signature = new Buffer(ECDSA.serializeSig(signature))
+        var signature = new Buffer(ecdsa.serializeSig(signature))
         EQ (signature.toString('hex'), f.DER)
       })
     })
@@ -115,7 +109,7 @@ describe('ecdsa', function() {
         var i = f.compact.i
         var compressed = f.compact.compressed
 
-        var signature = ECDSA.serializeSigCompact(signature, i, compressed)
+        var signature = ecdsa.serializeSigCompact(signature, i, compressed)
         EQ (signature.toString('hex'), f.compact.hex)
       })
     })

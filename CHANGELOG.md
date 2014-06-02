@@ -6,6 +6,21 @@
 * removed `ecurve-names` from dev deps
 * upgraded `~bigi@0.2.0` to `^bigi@1.1.0`
 * removed `sha256` from dev deps
+* changed the way the module should be used, old way was very cumbersome
+
+New Way:
+
+```js
+var ecdsa = require('ecdsa') //defaults to secp256k1 curve
+```
+
+if you want another curve:
+
+```js
+var ecdsa = require('ecdsa')('secp256r1')
+```
+
+
 
 0.4.1 / 2014-04-14
 ------------------
