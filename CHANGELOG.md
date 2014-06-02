@@ -1,3 +1,8 @@
+0.5.0 / 2014-0x-dd
+------------------
+* add Travis CI support
+* 
+
 0.4.1 / 2014-04-14
 ------------------
 * bugfix: `parseSigCompact()` referencing invalid `ecparams` #6
