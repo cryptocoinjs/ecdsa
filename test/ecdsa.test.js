@@ -103,7 +103,7 @@ describe('ecdsa', function() {
     })
   })
 
-  describe.skip('serializeSigCompact', function() {
+  describe('serializeSigCompact', function() {
     fixtures.valid.forEach(function(f) {
       it('encodes ' + f.compact.hex + ' correctly', function() {
         var signature = {
