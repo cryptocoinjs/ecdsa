@@ -5,6 +5,7 @@
 * upgraded `~ecurve@0.3.2` to `^ecurve@0.6.0`
 * removed `ecurve-names` from dev deps
 * upgraded `~bigi@0.2.0` to `^bigi@1.1.0`
+* removed `sha256` from dev deps
 
 0.4.1 / 2014-04-14
 ------------------
