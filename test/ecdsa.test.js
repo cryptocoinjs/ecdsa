@@ -11,11 +11,10 @@ require('terst')
 
 describe('ECDSA()', function() {
   it('should create the ecdsa object with the proper curve', function() {
-    var ecparams = require('ecurve-names')('secp256k1');
     var ecdsa = new ECDSA(ecparams);
-    EQ (ecdsa.ecparams.g.toString(16), ecparams.getG().toString(16));
-    EQ (ecdsa.ecparams.n.toString(16), ecparams.getN().toString(16));
-    EQ (ecdsa.ecparams.h.toString(16), ecparams.getH().toString(16));
+    EQ (ecdsa.ecparams.g.toString(16), ecparams.g.toString(16));
+    EQ (ecdsa.ecparams.n.toString(16), ecparams.n.toString(16));
+    EQ (ecdsa.ecparams.h.toString(16), ecparams.h.toString(16));
   })
 })
 
@@ -26,7 +25,7 @@ describe('- verify()', function() {
       var privKey = BigInteger.fromByteArrayUnsigned(randArr);
       var ecdsa = new ECDSA(ecparams);
       //var privKey = ecdsa.getBigRandom(ecparams.getN())
-      var pubPoint = ecparams.getG().multiply(privKey)
+      var pubPoint = ecparams.g.multiply(privKey)
       var pubKey = pubPoint.getEncoded(false) //true => compressed
       var msg = "hello world!"
       var shaMsg = sha256(msg)
