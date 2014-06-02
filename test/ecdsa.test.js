@@ -36,7 +36,7 @@ describe('ecdsa', function() {
     })
 
     fixtures.invalid.DER.forEach(function(f) {
-      it.skip('throws on ' + f.hex, function() {
+      it('throws on ' + f.hex, function() {
         var buffer = new Buffer(f.hex, 'hex')
 
         THROWS(function() {
