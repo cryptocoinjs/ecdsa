@@ -186,6 +186,21 @@ describe('ecdsa', function() {
         T (isValid)
       })
     })
+
+    describe('> when publicKey is not a buffer', function() {
+      var randArr = secureRandom(32, {array: true})
+      var privKeyBigInt = BigInteger.fromByteArrayUnsigned(randArr)
+
+      var pubPoint = ecparams.g.multiply(privKeyBigInt)
+      var pubKey = pubPoint.getEncoded(true) //true => compressed
+      var msg = "hello world!"
+      var shaMsg = crypto.createHash('sha256').update(new Buffer(msg, 'utf8')).digest()
+      var signature = ecdsa.sign(shaMsg, privKeyBigInt)
+
+      THROWS(function() {
+        var isValid = ecdsa.verify(shaMsg, signature, pubPoint)
+      })
+    })
   })
 
   describe('verifyRaw', function() {
