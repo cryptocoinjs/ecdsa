@@ -1,4 +1,4 @@
-0.5.0 / 2014-0x-dd
+0.5.0 / 2014-06-02
 ------------------
 * added Travis CI support
 * added Coveralls support
