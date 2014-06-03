@@ -1,3 +1,34 @@
+0.5.0 / 2014-0x-dd
+------------------
+* added Travis CI support
+* added Coveralls support
+* upgraded `~ecurve@0.3.2` to `^ecurve@0.6.0`
+* removed `ecurve-names` from dev deps
+* upgraded `~bigi@0.2.0` to `^bigi@1.1.0`
+* removed `sha256` from dev deps
+* changed the way the module should be used, old way was very cumbersome
+
+New Way:
+
+```js
+var ecdsa = require('ecdsa') //defaults to secp256k1 curve
+```
+
+if you want another curve:
+
+```js
+var ecdsa = require('ecdsa')('secp256r1')
+```
+
+* added `deterministicGenerateK()`, RFC 6979. See: https://github.com/cryptocoinjs/ecdsa/issues/4.
+* added `recoverPubKey()` from BitcoinJS
+* added `serializeSigCompact()` from BitcoinJS
+* changed method signature of `sign(hash, privateKeyBigInteger)` to sign(hash, privateKeyBuffer)`
+* `sign()` method now uses low `s` value: See: https://github.com/cryptocoinjs/ecdsa/issues/10
+* renamed `calcPubkeyRecoveryParam()` to `calcPubKeyRecoveryParam()`, changed signature
+* added Testling support 
+
+
 0.4.1 / 2014-04-14
 ------------------
 * bugfix: `parseSigCompact()` referencing invalid `ecparams` #6

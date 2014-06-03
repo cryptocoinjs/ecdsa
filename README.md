@@ -1,52 +1,23 @@
 ecdsa
 ======
 
-JavaScript component for Elliptical Curve Cryptography signing and verify.
+[![build status](https://secure.travis-ci.org/cryptocoinjs/ecdsa.png)](http://travis-ci.org/cryptocoinjs/ecdsa)
+[![Coverage Status](https://img.shields.io/coveralls/cryptocoinjs/ecdsa.svg)](https://coveralls.io/r/cryptocoinjs/ecdsa)
+
+[![browser support](https://ci.testling.com/cryptocoinjs/ecdsa.png)](https://ci.testling.com/cryptocoinjs/ecdsa)
+
+JavaScript component for Elliptical Curve Cryptography signing and verification. This module is important to sign transactions. Works 
+with both Node.js and the browser.
+
+Official documentation:
+
+http://cryptocoinjs.com/modules/crypto/ecdsa/
 
 
-See this article for more details: [bitcoin address](http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript).
 
 
 
-Install
--------
 
-    npm install --save ecdsa
-
-
-Example
--------
-
-```js
-var ecparams = require('ecurve-names')('secp256k1')
-var ECDSA = require('ecdsa')
-var sha256 = require('sha256')
-var secureRandom = require('secure-random')
-var BigInteger = require('bigi')
-
-var randArr = secureRandom(32, {array: true})
-var privKey = BigInteger.fromByteArrayUnsigned(randArr)
-
-//must set curve
-var ecdsa = new ECDSA(ecparams);
-
-//or
-//ECDSA.ecparams = ecparams;
-
-var pubPoint = ecparams.getG().multiply(privKey)
-var pubKey = pubPoint.getEncoded(false) //true => compressed
-var msg = "hello world!"
-var shaMsg = sha256(msg)
-var signature = ecdsa.sign(shaMsg, privKey)
-var isValid = ecdsa.verify(shaMsg, signature, pubKey)
-console.log(isValid) //true
-```
-
-
-Credits
--------
-
-It's not clear to me if this is based upon Tom Wu's work or Stefen Thomas. 
 
 
 

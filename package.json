@@ -16,8 +16,9 @@
   "devDependencies": {
     "mocha": "1.*",
     "terst": "~0.1.0",
-    "sha256": "~0.1.0",
-    "ecurve-names": "~0.3.0"
+    "coveralls": "^2.10.0",
+    "mocha-lcov-reporter": "0.0.1",
+    "istanbul": "^0.2.10"
   },
   "repository": {
     "url": "https://github.com/cryptocoinjs/ecdsa",
@@ -25,8 +26,25 @@
   },
   "main": "./lib/ecdsa.js",
   "dependencies": {
-    "bigi": "~0.2.0",
-    "secure-random": "~0.2.0",
-    "ecurve": "~0.3.2"
+    "bigi": "^1.1.0",
+    "secure-random": "~0.2.1",
+    "ecurve": "^0.6.0"
+  },
+  "scripts": {
+    "test": "mocha --ui bdd",
+    "unit": "./node_modules/.bin/mocha",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*.js",
+    "coveralls": "npm run-script coverage && node ./node_modules/.bin/coveralls < coverage/lcov.info"
+  },
+  "testling": {
+    "harness": "mocha",
+    "files": "test/*.js",
+    "browsers": [
+      "chrome/latest",
+      "safari/6..latest",
+      "firefox/latest",
+      "iphone/6..latest",
+      "android-browser/4.2..latest"
+    ]
   }
 }
