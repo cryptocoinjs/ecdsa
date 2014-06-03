@@ -18,7 +18,8 @@
     "terst": "~0.1.0",
     "coveralls": "^2.10.0",
     "mocha-lcov-reporter": "0.0.1",
-    "istanbul": "^0.2.10"
+    "istanbul": "^0.2.10",
+    "secure-random": "^0.2.1"
   },
   "repository": {
     "url": "https://github.com/cryptocoinjs/ecdsa",
@@ -27,7 +28,6 @@
   "main": "./lib/ecdsa.js",
   "dependencies": {
     "bigi": "^1.1.0",
-    "secure-random": "~0.2.1",
     "ecurve": "^0.6.0"
   },
   "scripts": {
