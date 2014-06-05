@@ -25,8 +25,8 @@ var ecdsa = require('ecdsa')('secp256r1')
 ```
 
 * added `deterministicGenerateK()`, RFC 6979. See: https://github.com/cryptocoinjs/ecdsa/issues/4.
-* added `recoverPubKey()` from BitcoinJS
-* added `serializeSigCompact()` from BitcoinJS
+* added `recoverPubKey()` from BitcoinJS / [Daniel Cousens](https://github.com/dcousens)
+* added `serializeSigCompact()` from BitcoinJS / [Daniel Cousens](https://github.com/dcousens)
 * changed method signature of `sign(hash, privateKeyBigInteger)` to sign(hash, privateKeyBuffer)`
 * `sign()` method now uses low `s` value: See: https://github.com/cryptocoinjs/ecdsa/issues/10
 * renamed `calcPubkeyRecoveryParam()` to `calcPubKeyRecoveryParam()`, changed signature
