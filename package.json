@@ -27,7 +27,7 @@
   },
   "main": "./lib/ecdsa.js",
   "dependencies": {
-    "bigi": "^1.1.0",
+    "bigi": "^1.2.1",
     "ecurve": "^0.6.0"
   },
   "scripts": {
