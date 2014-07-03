@@ -1,3 +1,7 @@
+0.5.2 / 2014-07-03
+------------------
+* bugfix: `deterministicGenerateK()` now works with BigInteger instances of other `bigi` installations
+
 0.5.1 / 2014-06-03
 ------------------
 * mistakenly left `secure-random` as a production dependency, moved it to development dep
