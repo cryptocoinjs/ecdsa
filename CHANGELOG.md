@@ -1,3 +1,7 @@
+0.5.3 / 2014-07-04
+------------------
+* bugfix: verify() should treat `hash` as a Buffer and as not a byte array, see #14
+
 0.5.2 / 2014-07-03
 ------------------
 * bugfix: `deterministicGenerateK()` now works with BigInteger instances of other `bigi` installations
