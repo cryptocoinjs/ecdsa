@@ -2,6 +2,7 @@
 ------------------
 - dropped alternative curve support, only `secp256k1` for now; if we find we need others in the future we can just grab 
 them from Git history
+- upgraded from `"ecurve": "^0.6.0"`to `"ecurve": "^1.0.0"`
 
 
 0.5.3 / 2014-07-04

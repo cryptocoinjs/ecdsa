@@ -28,7 +28,7 @@
   "main": "./lib/ecdsa.js",
   "dependencies": {
     "bigi": "^1.2.1",
-    "ecurve": "^0.6.0"
+    "ecurve": "^1.0.0"
   },
   "scripts": {
     "test": "mocha --ui bdd",
