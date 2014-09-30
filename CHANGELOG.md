@@ -1,3 +1,9 @@
+0.6.0 / 2014-09-30
+------------------
+- dropped alternative curve support, only `secp256k1` for now; if we find we need others in the future we can just grab 
+them from Git history
+
+
 0.5.3 / 2014-07-04
 ------------------
 * bugfix: verify() should treat `hash` as a Buffer and as not a byte array, see #14
