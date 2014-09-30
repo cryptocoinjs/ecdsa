@@ -4,7 +4,7 @@ var BigInteger = require('bigi');
 var secureRandom = require('secure-random');
 
 var ecurve = require('ecurve')
-var ecparams = ecurve.getECParams('secp256k1')
+var curve = ecurve.getECParams('secp256k1')
 
 var ecdsa = require('../')
 var fixtures = require('./fixtures/ecdsa')
@@ -75,7 +75,7 @@ describe('ecdsa', function() {
       var D = BigInteger.ONE
       var signature = new Buffer('INcvXVVEFyIfHLbDX+xoxlKFn3Wzj9g0UbhObXdMq+YMKC252o5RHFr0/cKdQe1WsBLUBi4morhgZ77obDJVuV0=', 'base64')
 
-      var Q = ecparams.g.multiply(D)
+      var Q = curve.g.multiply(D)
 
       //CryptoCoinJS doesn't have message yet
       //var hash = message.magicHash('1111', networks.bitcoin)
@@ -136,7 +136,7 @@ describe('ecdsa', function() {
       var sig = ecdsa.sign(hash, BigInteger.ONE)
 
       // See BIP62 for more information
-      var N_OVER_TWO = ecparams.n.shiftRight(1)
+      var N_OVER_TWO = curve.n.shiftRight(1)
       T (sig.s.compareTo(N_OVER_TWO) <= 0)
     })
   })
@@ -147,7 +147,7 @@ describe('ecdsa', function() {
         var randArr = secureRandom(32, {array: true});
         var privKey = BigInteger.fromByteArrayUnsigned(randArr);
         var privateKey = privKey.toBuffer()
-        var pubPoint = ecparams.g.multiply(privKey)
+        var pubPoint = curve.g.multiply(privKey)
         var pubKey = pubPoint.getEncoded(false) //true => compressed
         var msg = "hello world!"
         var shaMsg = crypto.createHash('sha256').update(new Buffer(msg, 'utf8')).digest()
@@ -162,7 +162,7 @@ describe('ecdsa', function() {
         var randArr = secureRandom(32, {array: true})
         var privKey = BigInteger.fromByteArrayUnsigned(randArr)
         var privateKey = privKey.toBuffer()
-        var pubPoint = ecparams.g.multiply(privKey)
+        var pubPoint = curve.g.multiply(privKey)
         var pubKey = pubPoint.getEncoded(true) //true => compressed
         var msg = "hello world!"
         var shaMsg = crypto.createHash('sha256').update(new Buffer(msg, 'utf8')).digest()
@@ -177,7 +177,7 @@ describe('ecdsa', function() {
         var randArr = secureRandom(32, {array: true})
         var privKeyBigInt = BigInteger.fromByteArrayUnsigned(randArr)
 
-        var pubPoint = ecparams.g.multiply(privKeyBigInt)
+        var pubPoint = curve.g.multiply(privKeyBigInt)
         var pubKey = pubPoint.getEncoded(true) //true => compressed
         var msg = "hello world!"
         var shaMsg = crypto.createHash('sha256').update(new Buffer(msg, 'utf8')).digest()
@@ -191,7 +191,7 @@ describe('ecdsa', function() {
       var randArr = secureRandom(32, {array: true})
       var privKeyBigInt = BigInteger.fromByteArrayUnsigned(randArr)
 
-      var pubPoint = ecparams.g.multiply(privKeyBigInt)
+      var pubPoint = curve.g.multiply(privKeyBigInt)
       var pubKey = pubPoint.getEncoded(true) //true => compressed
       var msg = "hello world!"
       var shaMsg = crypto.createHash('sha256').update(new Buffer(msg, 'utf8')).digest()
@@ -207,7 +207,7 @@ describe('ecdsa', function() {
     it('verifies valid signatures', function() {
       fixtures.valid.forEach(function(f) {
         var D = BigInteger.fromHex(f.D)
-        var Q = ecparams.g.multiply(D)
+        var Q = curve.g.multiply(D)
 
         var signature = {
           r: new BigInteger(f.signature.r),
@@ -229,7 +229,7 @@ describe('ecdsa', function() {
           r: new BigInteger(f.signature.r),
           s: new BigInteger(f.signature.s)
         }
-        var Q = ecparams.g.multiply(D)
+        var Q = curve.g.multiply(D)
 
         EQ (ecdsa.verifyRaw(e, signature, Q), false)
       })

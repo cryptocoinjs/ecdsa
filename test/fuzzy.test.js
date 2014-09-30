@@ -2,7 +2,7 @@ var ecdsa  = require('..')
   , bigi   = require('bigi')
   , crypto = require('crypto')
   , assert = require('assert')
-  , G = ecdsa.ecparams.g
+  , G = ecdsa.curve.g
 
 function sha256(x) { return crypto.createHash('sha256').update(x).digest() }
 
