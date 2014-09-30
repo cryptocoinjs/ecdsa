@@ -1,6 +1,6 @@
 {
   "name": "ecdsa",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "description": "Elliptical Curve Cryptography Digital Signing",
   "keywords": [
     "cryptography",
