@@ -9,7 +9,7 @@ ecdsa
 JavaScript component for Elliptical Curve Cryptography signing and verification. This module is important to sign transactions. Works 
 with both Node.js and the browser.
 
-Official documentation:
+### Official documentation:
 
 http://cryptocoinjs.com/modules/crypto/ecdsa/
 
