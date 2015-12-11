@@ -27,6 +27,7 @@
     "url": "https://github.com/cryptocoinjs/ecdsa",
     "type": "git"
   },
+  "license": "MIT",
   "main": "./lib/ecdsa.js",
   "dependencies": {
     "bigi": "^1.2.1",
