@@ -1,4 +1,4 @@
-var ecdsa = require('..')
+var ecdsa = require('../')
 var bigi = require('bigi')
 var crypto = require('crypto')
 var assert = require('assert')

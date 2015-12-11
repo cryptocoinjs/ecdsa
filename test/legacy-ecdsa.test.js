@@ -4,8 +4,9 @@ var BigInteger = require('bigi')
 var secureRandom = require('secure-random')
 var ecdsa = require('../')
 var curve = ecdsa.curve
-var fixtures = require('./fixtures/ecdsa')
+var fixtures = require('./fixtures/legacy-ecdsa')
 
+// trinity: mocha
 /* global describe, it */
 
 describe('ecdsa', function () {
