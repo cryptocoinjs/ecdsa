@@ -1,3 +1,4 @@
+var assert = require('assert')
 var crypto = require('crypto')
 var BigInteger = require('bigi')
 var secureRandom = require('secure-random')
@@ -5,9 +6,7 @@ var ecdsa = require('../')
 var curve = ecdsa.curve
 var fixtures = require('./fixtures/ecdsa')
 
-require('terst')
-
-/* global describe, it, EQ, T, THROWS */
+/* global describe, it */
 
 describe('ecdsa', function () {
   describe('deterministicGenerateK', function () {
@@ -17,7 +16,7 @@ describe('ecdsa', function () {
         var h1 = crypto.createHash('sha256').update(new Buffer(f.message, 'utf8')).digest()
 
         var k = ecdsa.deterministicGenerateK(h1, D)
-        EQ(k.toHex(), f.k)
+        assert.strictEqual(k.toHex(), f.k)
       })
     })
   })
@@ -28,8 +27,8 @@ describe('ecdsa', function () {
         var buffer = new Buffer(f.DER, 'hex')
         var signature = ecdsa.parseSig(buffer)
 
-        EQ(signature.r.toString(), f.signature.r)
-        EQ(signature.s.toString(), f.signature.s)
+        assert.strictEqual(signature.r.toString(), f.signature.r)
+        assert.strictEqual(signature.s.toString(), f.signature.s)
       })
     })
 
@@ -37,7 +36,7 @@ describe('ecdsa', function () {
       it('throws on ' + f.hex, function () {
         var buffer = new Buffer(f.hex, 'hex')
 
-        THROWS(function () {
+        assert.throws(function () {
           ecdsa.parseSig(buffer)
         }, new RegExp(f.exception))
       })
@@ -50,10 +49,10 @@ describe('ecdsa', function () {
         var buffer = new Buffer(f.compact.hex, 'hex')
         var parsed = ecdsa.parseSigCompact(buffer)
 
-        EQ(parsed.signature.r.toString(), f.signature.r)
-        EQ(parsed.signature.s.toString(), f.signature.s)
-        EQ(parsed.i, f.compact.i)
-        EQ(parsed.compressed, f.compact.compressed)
+        assert.strictEqual(parsed.signature.r.toString(), f.signature.r)
+        assert.strictEqual(parsed.signature.s.toString(), f.signature.s)
+        assert.strictEqual(parsed.i, f.compact.i)
+        assert.strictEqual(parsed.compressed, f.compact.compressed)
       })
     })
 
@@ -61,7 +60,7 @@ describe('ecdsa', function () {
       it('throws on ' + f.hex, function () {
         var buffer = new Buffer(f.hex, 'hex')
 
-        THROWS(function () {
+        assert.throws(function () {
           ecdsa.parseSigCompact(buffer)
         }, new RegExp(f.exception))
       })
@@ -83,7 +82,7 @@ describe('ecdsa', function () {
       var parsed = ecdsa.parseSigCompact(signature)
 
       var Qprime = ecdsa.recoverPubKey(e, parsed.signature, parsed.i)
-      T(Q.equals(Qprime))
+      assert.ok(Q.equals(Qprime))
     })
   })
 
@@ -96,7 +95,7 @@ describe('ecdsa', function () {
         }
 
         signature = new Buffer(ecdsa.serializeSig(signature))
-        EQ(signature.toString('hex'), f.DER)
+        assert.strictEqual(signature.toString('hex'), f.DER)
       })
     })
   })
@@ -112,7 +111,7 @@ describe('ecdsa', function () {
         var compressed = f.compact.compressed
 
         signature = ecdsa.serializeSigCompact(signature, i, compressed)
-        EQ(signature.toString('hex'), f.compact.hex)
+        assert.strictEqual(signature.toString('hex'), f.compact.hex)
       })
     })
   })
@@ -124,8 +123,8 @@ describe('ecdsa', function () {
         var hash = crypto.createHash('sha256').update(new Buffer(f.message, 'utf8')).digest()
         var signature = ecdsa.sign(hash, privateKey)
 
-        EQ(signature.r.toString(), f.signature.r)
-        EQ(signature.s.toString(), f.signature.s)
+        assert.strictEqual(signature.r.toString(), f.signature.r)
+        assert.strictEqual(signature.s.toString(), f.signature.s)
       })
     })
 
@@ -135,7 +134,7 @@ describe('ecdsa', function () {
 
       // See BIP62 for more information
       var N_OVER_TWO = curve.n.shiftRight(1)
-      T(sig.s.compareTo(N_OVER_TWO) <= 0)
+      assert.ok(sig.s.compareTo(N_OVER_TWO) <= 0)
     })
   })
 
@@ -151,7 +150,7 @@ describe('ecdsa', function () {
         var shaMsg = crypto.createHash('sha256').update(new Buffer(msg, 'utf8')).digest()
         var signature = ecdsa.sign(shaMsg, privateKey)
         var isValid = ecdsa.verify(shaMsg, signature, pubKey)
-        T(isValid)
+        assert.ok(isValid)
       })
     })
 
@@ -166,7 +165,7 @@ describe('ecdsa', function () {
         var shaMsg = crypto.createHash('sha256').update(new Buffer(msg, 'utf8')).digest()
         var signature = ecdsa.sign(shaMsg, privateKey)
         var isValid = ecdsa.verify(shaMsg, signature, pubKey)
-        T(isValid)
+        assert.ok(isValid)
       })
     })
 
@@ -181,7 +180,7 @@ describe('ecdsa', function () {
         var shaMsg = crypto.createHash('sha256').update(new Buffer(msg, 'utf8')).digest()
         var signature = ecdsa.sign(shaMsg, privKeyBigInt)
         var isValid = ecdsa.verify(shaMsg, signature, pubKey)
-        T(isValid)
+        assert.ok(isValid)
       })
     })
 
@@ -196,7 +195,7 @@ describe('ecdsa', function () {
         var shaMsg = crypto.createHash('sha256').update(new Buffer(msg, 'utf8')).digest()
         var signature = ecdsa.sign(shaMsg, privKeyBigInt)
 
-        THROWS(function () {
+        assert.throws(function () {
           ecdsa.verify(shaMsg, signature, pubPoint)
         })
       })
@@ -217,7 +216,7 @@ describe('ecdsa', function () {
         var hash = crypto.createHash('sha256').update(new Buffer(f.message, 'utf8')).digest()
         var e = BigInteger.fromBuffer(hash)
 
-        T(ecdsa.verifyRaw(e, signature, Q))
+        assert.ok(ecdsa.verifyRaw(e, signature, Q))
       })
     })
 
@@ -231,7 +230,7 @@ describe('ecdsa', function () {
         }
         var Q = curve.G.multiply(D)
 
-        EQ(ecdsa.verifyRaw(e, signature, Q), false)
+        assert.strictEqual(ecdsa.verifyRaw(e, signature, Q), false)
       })
     })
   })
