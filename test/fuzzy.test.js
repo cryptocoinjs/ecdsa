@@ -12,7 +12,8 @@ describe('fuzzy tests for sign/verify', function () {
   it('should always work', function () {
     for (var i = 0; i < 100; i++) {
       var priv = sha256('p' + i + Math.random())
-      var pub = G.multiply(bigi.fromBuffer(priv)).getEncoded(Math.random() < 0.5)
+      var compressed = !!(Math.random() < 0.5)
+      var pub = G.multiply(bigi.fromBuffer(priv)).getEncoded(compressed)
       var data = sha256('d' + i + Math.random())
 
       assert(ecdsa.verify(data, ecdsa.sign(data, priv), pub))
