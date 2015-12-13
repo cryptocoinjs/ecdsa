@@ -1,3 +1,7 @@
+0.7.0 / 2015-12-13
+------------------
+- extracted bitcoinjs-lib `ecdsa`. Fixes a number of issues of security issues.
+
 0.6.0 / 2014-09-30
 ------------------
 - dropped alternative curve support, only `secp256k1` for now; if we find we need others in the future we can just grab
