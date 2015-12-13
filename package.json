@@ -20,6 +20,7 @@
     "mocha": "^2.3.4",
     "mocha-lcov-reporter": "0.0.1",
     "secure-random": "^0.2.1",
+    "sinon": "^1.17.2",
     "standard": "^5.4.1"
   },
   "repository": {
@@ -27,10 +28,13 @@
     "type": "git"
   },
   "license": "MIT",
-  "main": "./lib/ecdsa.js",
+  "main": "./lib/index.js",
   "dependencies": {
     "bigi": "^1.2.1",
-    "ecurve": "^1.0.0"
+    "bip66": "^1.1.0",
+    "create-hmac": "^1.1.4",
+    "ecurve": "^1.0.0",
+    "typeforce": "^1.6.1"
   },
   "scripts": {
     "browser-test": "electron-mocha",

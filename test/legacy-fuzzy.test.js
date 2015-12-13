@@ -1,5 +1,5 @@
 var ecdsa = require('../')
-var bigi = require('bigi')
+var BigInteger = require('bigi')
 var crypto = require('crypto')
 var assert = require('assert')
 var G = ecdsa.curve.G
@@ -12,11 +12,13 @@ describe('fuzzy tests for sign/verify', function () {
   it('should always work', function () {
     for (var i = 0; i < 100; i++) {
       var priv = sha256('p' + i + Math.random())
-      var compressed = !!(Math.random() < 0.5)
-      var pub = G.multiply(bigi.fromBuffer(priv)).getEncoded(compressed)
+      var d = BigInteger.fromBuffer(priv)
+      // var compressed = !!(Math.random() < 0.5)
+      var Q = G.multiply(d)
+      // var pub = Q.getEncoded(compressed)
       var data = sha256('d' + i + Math.random())
 
-      assert(ecdsa.verify(data, ecdsa.sign(data, priv), pub))
+      assert(ecdsa.verify(data, ecdsa.sign(data, d), Q))
     }
   })
 })

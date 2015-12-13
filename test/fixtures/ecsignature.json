@@ -1,14 +1,14 @@
 {
   "valid": [
     {
-      "_skip": true,
-      "D": "01",
-      "k": "ec633bd56a5774a0940cb97e27a9e4e51dc94af737596a0c5cbb3d30332d92a5",
-      "message": "Everything should be made as simple as possible, but not simpler.",
       "compact": {
         "hex": "1f33a69cd2065432a30f3d1ce4eb0d59b8ab58c74f27c41a7fdb5696ad4e6108c96f807982866f785d3f6418d24163ddae117b7db4d5fdf0071de069fa54342262",
         "compressed": true,
         "i": 0
+      },
+      "scriptSignature": {
+        "hex": "3044022033a69cd2065432a30f3d1ce4eb0d59b8ab58c74f27c41a7fdb5696ad4e6108c902206f807982866f785d3f6418d24163ddae117b7db4d5fdf0071de069fa5434226201",
+        "hashType": 1
       },
       "DER": "3044022033a69cd2065432a30f3d1ce4eb0d59b8ab58c74f27c41a7fdb5696ad4e6108c902206f807982866f785d3f6418d24163ddae117b7db4d5fdf0071de069fa54342262",
       "signature": {
@@ -17,28 +17,30 @@
       }
     },
     {
-      "D": "fffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364140",
-      "k": "9dc74cbfd383980fb4ae5d2680acddac9dac956dca65a28c80ac9c847c2374e4",
-      "message": "Equations are more important to me, because politics is for the present, but an equation is something for eternity.",
       "compact": {
         "hex": "1b54c4a33c6423d689378f160a7ff8b61330444abb58fb470f96ea16d99d4a2fed07082304410efa6b2943111b6a4e0aaa7b7db55a07e9861d1fb3cb1f421044a5",
         "compressed": false,
         "i": 0
       },
       "DER": "3044022054c4a33c6423d689378f160a7ff8b61330444abb58fb470f96ea16d99d4a2fed022007082304410efa6b2943111b6a4e0aaa7b7db55a07e9861d1fb3cb1f421044a5",
+      "scriptSignature": {
+        "hex": "3044022054c4a33c6423d689378f160a7ff8b61330444abb58fb470f96ea16d99d4a2fed022007082304410efa6b2943111b6a4e0aaa7b7db55a07e9861d1fb3cb1f421044a502",
+        "hashType": 2
+      },
       "signature": {
         "r": "38341707918488238920692284707283974715538935465589664377561695343399725051885",
         "s": "3180566392414476763164587487324397066658063772201694230600609996154610926757"
       }
     },
     {
-      "D": "fffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364140",
-      "k": "fd27071f01648ebbdd3e1cfbae48facc9fa97edc43bbbc9a7fdc28eae13296f5",
-      "message": "Not only is the Universe stranger than we think, it is stranger than we can think.",
       "compact": {
         "hex": "1fff466a9f1b7b273e2f4c3ffe032eb2e814121ed18ef84665d0f515360dab3dd06fc95f5132e5ecfdc8e5e6e616cc77151455d46ed48f5589b7db7771a332b283",
         "compressed": true,
         "i": 0
+      },
+      "scriptSignature": {
+        "hex": "3045022100ff466a9f1b7b273e2f4c3ffe032eb2e814121ed18ef84665d0f515360dab3dd002206fc95f5132e5ecfdc8e5e6e616cc77151455d46ed48f5589b7db7771a332b28303",
+        "hashType": 3
       },
       "DER": "3045022100ff466a9f1b7b273e2f4c3ffe032eb2e814121ed18ef84665d0f515360dab3dd002206fc95f5132e5ecfdc8e5e6e616cc77151455d46ed48f5589b7db7771a332b283",
       "signature": {
@@ -47,13 +49,14 @@
       }
     },
     {
-      "D": "0000000000000000000000000000000000000000000000000000000000000001",
-      "k": "f0cd2ba5fc7c183de589f6416220a36775a146740798756d8d949f7166dcc87f",
-      "message": "How wonderful that we have met with a paradox. Now we have some hope of making progress.",
       "compact": {
         "hex": "1cc0dafec8251f1d5010289d210232220b03202cba34ec11fec58b3e93a85b91d375afdc06b7d6322a590955bf264e7aaa155847f614d80078a90292fe205064d3",
         "compressed": false,
         "i": 1
+      },
+      "scriptSignature": {
+        "hex": "3045022100c0dafec8251f1d5010289d210232220b03202cba34ec11fec58b3e93a85b91d3022075afdc06b7d6322a590955bf264e7aaa155847f614d80078a90292fe205064d381",
+        "hashType": 129
       },
       "DER": "3045022100c0dafec8251f1d5010289d210232220b03202cba34ec11fec58b3e93a85b91d3022075afdc06b7d6322a590955bf264e7aaa155847f614d80078a90292fe205064d3",
       "signature": {
@@ -62,13 +65,14 @@
       }
     },
     {
-      "D": "69ec59eaa1f4f2e36b639716b7c30ca86d9a5375c7b38d8918bd9c0ebc80ba64",
-      "k": "6bb4a594ad57c1aa22dbe991a9d8501daf4688bf50a4892ef21bd7c711afda97",
-      "message": "Computer science is no more about computers than astronomy is about telescopes.",
       "compact": {
         "hex": "1f7186363571d65e084e7f02b0b77c3ec44fb1b257dee26274c38c928986fea45d0de0b38e06807e46bda1f1e293f4f6323e854c86d58abdd00c46c16441085df6",
         "compressed": true,
         "i": 0
+      },
+      "scriptSignature": {
+        "hex": "304402207186363571d65e084e7f02b0b77c3ec44fb1b257dee26274c38c928986fea45d02200de0b38e06807e46bda1f1e293f4f6323e854c86d58abdd00c46c16441085df682",
+        "hashType": 130
       },
       "DER": "304402207186363571d65e084e7f02b0b77c3ec44fb1b257dee26274c38c928986fea45d02200de0b38e06807e46bda1f1e293f4f6323e854c86d58abdd00c46c16441085df6",
       "signature": {
@@ -77,13 +81,14 @@
       }
     },
     {
-      "D": "00000000000000000000000000007246174ab1e92e9149c6e446fe194d072637",
-      "k": "097b5c8ee22c3ea78a4d3635e0ff6fe85a1eb92ce317ded90b9e71aab2b861cb",
-      "message": "...if you aren't, at any given time, scandalized by code you wrote five or even three years ago, you're not learning anywhere near enough",
       "compact": {
         "hex": "1cfbfe5076a15860ba8ed00e75e9bd22e05d230f02a936b653eb55b61c99dda4870e68880ebb0050fe4312b1b1eb0899e1b82da89baa5b895f612619edf34cbd37",
         "compressed": false,
         "i": 1
+      },
+      "scriptSignature": {
+        "hex": "3045022100fbfe5076a15860ba8ed00e75e9bd22e05d230f02a936b653eb55b61c99dda48702200e68880ebb0050fe4312b1b1eb0899e1b82da89baa5b895f612619edf34cbd3783",
+        "hashType": 131
       },
       "DER": "3045022100fbfe5076a15860ba8ed00e75e9bd22e05d230f02a936b653eb55b61c99dda48702200e68880ebb0050fe4312b1b1eb0899e1b82da89baa5b895f612619edf34cbd37",
       "signature": {
@@ -92,13 +97,14 @@
       }
     },
     {
-      "D": "000000000000000000000000000000000000000000056916d0f9b31dc9b637f3",
-      "k": "19355c36c8cbcdfb2382e23b194b79f8c97bf650040fc7728dfbf6b39a97c25b",
-      "message": "The question of whether computers can think is like the question of whether submarines can swim.",
       "compact": {
         "hex": "20cde1302d83f8dd835d89aef803c74a119f561fbaef3eb9129e45f30de86abbf906ce643f5049ee1f27890467b77a6a8e11ec4661cc38cd8badf90115fbd03cef",
         "compressed": true,
         "i": 1
+      },
+      "scriptSignature": {
+        "hex": "3045022100cde1302d83f8dd835d89aef803c74a119f561fbaef3eb9129e45f30de86abbf9022006ce643f5049ee1f27890467b77a6a8e11ec4661cc38cd8badf90115fbd03cef81",
+        "hashType": 129
       },
       "DER": "3045022100cde1302d83f8dd835d89aef803c74a119f561fbaef3eb9129e45f30de86abbf9022006ce643f5049ee1f27890467b77a6a8e11ec4661cc38cd8badf90115fbd03cef",
       "signature": {
@@ -124,70 +130,83 @@
     ],
     "DER": [
       {
-        "exception": "Invalid sequence length",
-        "hex": "30ff0204ffffffff0204ffffffff"
+        "exception": "DER sequence length is too short",
+        "hex": "ffffffffffffff"
       },
       {
-        "exception": "Invalid sequence length",
-        "hex": "300c0304ffffffff0304ffffffff0000"
+        "exception": "DER sequence length is too long",
+        "hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
       },
       {
-        "exception": "Expected a DER integer",
-        "hex": "300cff04ffffffff0204ffffffff"
+        "exception": "Expected DER sequence",
+        "hex": "00ffff0400ffffff020400ffffff"
       },
       {
-        "exception": "Expected a DER integer \\(2\\)",
-        "hex": "300c0202ffffffff0204ffffffff"
+        "exception": "DER sequence length is invalid",
+        "hex": "30ff020400ffffff020400ffffff"
       },
       {
-        "exception": "Invalid DER encoding",
-        "hex": "300c0204ffffffff0202ffffffff"
+        "exception": "DER sequence length is invalid",
+        "hex": "300c030400ffffff030400ffffff0000"
+      },
+      {
+        "exception": "Expected DER integer",
+        "hex": "300cff0400ffffff020400ffffff"
+      },
+      {
+        "exception": "Expected DER integer \\(2\\)",
+        "hex": "300c020200ffffff020400ffffff"
+      },
+      {
+        "exception": "R length is zero",
+        "hex": "30080200020400ffffff"
+      },
+      {
+        "exception": "S length is zero",
+        "hex": "3008020400ffffff0200"
+      },
+      {
+        "exception": "R length is too long",
+        "hex": "300c02dd00ffffff020400ffffff"
+      },
+      {
+        "exception": "S length is invalid",
+        "hex": "300c020400ffffff02dd00ffffff"
+      },
+      {
+        "exception": "R value is negative",
+        "hex": "300c020480000000020400ffffff"
+      },
+      {
+        "exception": "S value is negative",
+        "hex": "300c020400ffffff020480000000"
+      },
+      {
+        "exception": "R value excessively padded",
+        "hex": "300c02040000ffff020400ffffff"
+      },
+      {
+        "exception": "S value excessively padded",
+        "hex": "300c020400ffffff02040000ffff"
       }
     ],
-    "verifyRaw": [
+    "scriptSignature": [
       {
-        "description": "The wrong signature",
-        "D": "01",
-        "e": "06ef2b193b83b3d701f765f1db34672ab84897e1252343cc2197829af3a30456",
+        "exception": "Invalid hashType 7",
+        "hashType": 7,
+        "hex": "3044022033a69cd2065432a30f3d1ce4eb0d59b8ab58c74f27c41a7fdb5696ad4e6108c902206f807982866f785d3f6418d24163ddae117b7db4d5fdf0071de069fa5434226207",
         "signature": {
-          "r": "38341707918488238920692284707283974715538935465589664377561695343399725051885",
-          "s": "3180566392414476763164587487324397066658063772201694230600609996154610926757"
+          "r": "23362334225185207751494092901091441011938859014081160902781146257181456271561",
+          "s": "50433721247292933944369538617440297985091596895097604618403996029256432099938"
         }
       },
       {
-        "description": "Invalid r value (== 0)",
-        "D": "01",
-        "e": "01",
+        "exception": "Invalid hashType 140",
+        "hashType": 140,
+        "hex": "3044022033a69cd2065432a30f3d1ce4eb0d59b8ab58c74f27c41a7fdb5696ad4e6108c902206f807982866f785d3f6418d24163ddae117b7db4d5fdf0071de069fa543422628c",
         "signature": {
-          "r": "00",
-          "s": "02"
-        }
-      },
-      {
-        "description": "Invalid r value (>= n)",
-        "D": "01",
-        "e": "01",
-        "signature": {
-          "r": "fffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141",
-          "s": "02"
-        }
-      },
-      {
-        "description": "Invalid s value (== 0)",
-        "D": "01",
-        "e": "01",
-        "signature": {
-          "r": "02",
-          "s": "00"
-        }
-      },
-      {
-        "description": "Invalid s value (>= n)",
-        "D": "01",
-        "e": "01",
-        "signature": {
-          "r": "02",
-          "s": "fffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141"
+          "r": "23362334225185207751494092901091441011938859014081160902781146257181456271561",
+          "s": "50433721247292933944369538617440297985091596895097604618403996029256432099938"
         }
       }
     ]
