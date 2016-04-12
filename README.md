@@ -1,3 +1,8 @@
+Deprecated
+==========
+
+Please use [`elliptic`](https://github.com/indutny/elliptic) (<https://github.com/indutny/elliptic>) instead.
+
 ecdsa
 ======
 
