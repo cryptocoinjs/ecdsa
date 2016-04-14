@@ -1,3 +1,8 @@
+# Deprecated
+
+Use [secp256k1](https://github.com/cryptocoinjs/secp256k1-node) or [elliptic](https://github.com/indutny/elliptic) if you
+need other curves.
+
 ecdsa
 ======
 
